@@ -1,10 +1,11 @@
-import { SignIn, SignInButton } from "@clerk/nextjs";
+import { SignIn } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 import React from "react";
 
 const LoginPage = () => {
   return (
-    <main className="container grid place-items-center h-screen w-screen">
-      <SignInButton mode="modal" />
+    <main className="grid place-items-center h-screen w-screen">
+      <SignIn appearance={{baseTheme: dark}} />
     </main>
   );
 };
