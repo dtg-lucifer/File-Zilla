@@ -1,11 +1,27 @@
-import { UserButton } from "@clerk/nextjs";
+"use client";
+
+import {
+  SignInButton,
+  SignOutButton,
+  SignedIn,
+  SignedOut,
+} from "@clerk/nextjs";
+import { Button } from "~/components/ui/button";
 
 export default function Home() {
   return (
-    // TODO: make the design more interesting and vibrant
     <main className="h-screen grid place-items-center">
       <div className="p-2">
-        <UserButton showName />
+        <SignedOut>
+          <SignInButton mode="modal">
+            <Button>Sign In</Button>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <SignOutButton>
+            <Button>Sign Out</Button>
+          </SignOutButton>
+        </SignedIn>
       </div>
     </main>
   );
